@@ -1,0 +1,33 @@
+.homeHeader {
+    display: flex;
+    justify-content: center;
+}
+.cardHolder{
+    display: flex;
+    justify-content: center;
+}
+.headlines {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; 
+}
+.grid-item  {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
+  }
+.tab-card{
+    display: flex;
+}
+.section2{
+    background-color: #f7f7f7;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
