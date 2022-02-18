@@ -1,1 +1,62 @@
-<p>navbar works!</p>
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+
+        <!-- LEFT ELEMENTS -->
+        <ul class="navbar-nav me-auto mb-lg-0">
+            <!-- LOGO -->
+            <a class="nav-item" href="#">
+                <img src="img/logo_640.png" alt="logo" width="60" height="52"
+                    class="d-inline-block align-text-top animate__animated animate__backInRight">
+            </a>
+            <!-- LINKS -->
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <p class="text-info bg-dark">Home</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <p class="text-info bg-dark">About us</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <p class="text-info bg-dark">Services</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <p class="text-info bg-dark">Age</p>
+                </a>
+            </li>
+            <!-- SORT ICON AND BUTTON -->
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <p class="text-info bg-dark">Age <i style="color:white;transform: rotate(180deg);"
+                            class="fas fa-sort-amount-up"></i><button class="sort"
+                            style="opacity:0; margin: -2vw 0 0 -2vw;" onclick="sortVal()">Sort</button></p>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- RIGHT ELEMENTS -->
+    <div class="d-flex align-items-center">
+        <div class="row d-flex justify-content-center">
+            <!--Grid column-->
+            <div class="col-md-5 col-12">
+                <!-- TEXT INPUT -->
+                <div class="form-outline form-white">
+                    <input type="text" id="form5Example21" class="form-control" placeholder="Search" />
+                </div>
+            </div>
+            <!-- SEARCH BUTTON -->
+            <div class="col-auto">
+                <button type="submit" class="btn btn-outline-light mb-0">
+                    <p class="text-info bg-dark">Search</p>
+                </button>
+            </div>
+        </div>
+    </div>
+</nav>
