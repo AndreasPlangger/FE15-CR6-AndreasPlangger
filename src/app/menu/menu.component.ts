@@ -7,23 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-  // name, image, description, price and availability (Boolean).
   products: Array<{ name: string, img: any, description: string, price: number, availability: boolean, }> = [
 
     {
-      name: 'Pizza Provencale',
-      img: '../../assets/img/pizza_provencale.jpg',
+      name: 'Pizza La Spanda',
+      img: '../../assets/img/pizza_la_spanda.jpg',
       description: 'fg',
       price: 22,
       availability: true,
 
-    },
-    {
-      name: 'Pizza Vegetariana',
-      img: '../../assets/img/pizza_vegetariana_alt.jpg',
-      description: '',
-      price: 22,
-      availability: true,
     },
     {
       name: 'Pizza Picante',
@@ -33,8 +25,15 @@ export class MenuComponent implements OnInit {
       availability: true,
     },
     {
-      name: 'Pizza Salame',
-      img: '../../assets/img/pizza_salame.jpg',
+      name: 'Pizza Vegetariana',
+      img: '../../assets/img/pizza_vegetariana_alt.jpg',
+      description: '',
+      price: 22,
+      availability: true,
+    },
+    {
+      name: 'Pizza Margherita',
+      img: '../../assets/img/pizza_margherit.jpg',
       description: '',
       price: 22,
       availability: true,
@@ -49,7 +48,7 @@ export class MenuComponent implements OnInit {
     },
     {
       name: 'Lasagna',
-      img: '../../assets/img/lasagna.jpg',
+      img: '../../assets/img/lasagn.jpg',
       description: '',
       price: 22,
       availability: true,
@@ -73,7 +72,7 @@ export class MenuComponent implements OnInit {
       img: '../../assets/img/panna_cotta.jpg',
       description: '',
       price: 22,
-      availability: true,
+      availability: false,
     }
   ]
 
