@@ -4,7 +4,7 @@
 
 <div class="menu">
     <div class="row row-cols-1 row-cols-md-3 g-4">
-        <div class="col" *ngFor="let product of products">
+        <div class="col" *ngFor="let product of products; let i=index">
             <div class="card h-100">
                 <img src='{{ product.img }}' class="card-img-top" alt="..." style=height:25rem;>
                 <div class="card-body">
@@ -15,11 +15,11 @@
 
                 </div>
                 <div class="d-grid gap-2 d-md-flex justify-content-md-beginning m-3">
-                    <button class="btn btn-primary me-md-2" type="button">Details</button>
+                    <a class="btn btn-primary me-md-2" routerlink="/products{i}">Details</a>
                     <button class="btn btn-success" type="button">Order</button>
                 </div>
                 <div class="card-footer">
-                    <small class="text-muted">Last updated 3 mins ago</small>
+                    <small class="text-muted"></small>
                 </div>
             </div>
         </div>
