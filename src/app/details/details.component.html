@@ -15,7 +15,9 @@
         <div class="card-body">
             <h5 class="card-title">{{ product.name }}</h5>
             <p class="card-text">This is a wider card with support</p>
-            <p>{{product.price | currency:'EUR':true }}</p>
+            <span class="price">
+                <h4>{{ product.price | currency:'EUR':true }}</h4>
+            </span>
             <p>{{product.description}}</p>
             <div class="container">
                 <button (click)="addToCart()" class="btn btn-md btn-success">Order</button>
