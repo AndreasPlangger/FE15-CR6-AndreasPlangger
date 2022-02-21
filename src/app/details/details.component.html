@@ -1,13 +1,25 @@
-<h2>Product Details</h2>
+<div class="cardContainer">
+    <h2>Product Details</h2>
 
+    <div *ngIf="product">
+        <h3>{{ product.name }}</h3>
+        <span class="price">
+            <h4>{{ product.price | currency:'EUR':true }}</h4>
+        </span>
+        <p>{{ product.description }}</p>
 
-<div *ngIf="product">
+    </div>
 
-    <h3>{{ product.name }}</h3>
-
-    <h4>{{ product.price | currency }}</h4>
-
-    <p>{{ product.description }}</p>
-
-
-</div>
+    <div class="card h-100" *ngIf="product">
+        <img [src]="product.img" class="card-img-top" alt="img" style=width:25rem;>
+        <div class="card-body">
+            <h5 class="card-title">{{ product.name }}</h5>
+            <p class="card-text">This is a wider card with support</p>
+            <p>{{product.price | currency:'EUR':true }}</p>
+            <p>{{product.description}}</p>
+            <div class="container">
+                <button (click)="addToCart()" class="btn btn-md btn-success">Order</button>
+            </div>
+        </div>
+    </div>
+    <div>
