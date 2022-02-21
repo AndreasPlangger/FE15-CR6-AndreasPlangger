@@ -4,19 +4,24 @@
 
 <div class="menu">
     <div class="row row-cols-1 row-cols-md-3 g-4">
-        <div class="col" *ngFor="let product of products; let i=index">
+        <div class="col" *ngFor="let product of products; index as productId">
             <div class="card h-100">
-                <img src='{{ product.img }}' class="card-img-top" alt="..." style=height:25rem;>
+                <img [src]="product.img" class="card-img-top" alt="..." style=height:25rem;>
                 <div class="card-body">
                     <h5 class="card-title">{{ product.name }}</h5>
                     <p class="card-text">This is a wider card with support</p>
-                    <p>€ {{product.price}}</p>
-                    <p>{{product.availability}}</p>
-
+                    <p>{{product.price | currency}}</p>
+                    <p *ngIf="product.description">{{product.description}}</p>
                 </div>
                 <div class="d-grid gap-2 d-md-flex justify-content-md-beginning m-3">
-                    <a class="btn btn-primary me-md-2" routerlink="/products{i}">Details</a>
-                    <button class="btn btn-success" type="button">Order</button>
+                    <ng-template [ngIf]="product.availability" [ngIfElse]="none">
+                        <a class="btn btn-sm btn-primary me-3" style="text-decoration: none; color:white;"
+                            routerLink="/products/{{productId}}" type="button">Details</a>
+                        <button (click)="addToCart(productId)" class="btn btn-sm btn-success">Order</button>
+                    </ng-template>
+                    <ng-template #none>
+                        <p style="color: red;">Item currently not available.</p>
+                    </ng-template>
                 </div>
                 <div class="card-footer">
                     <small class="text-muted"></small>

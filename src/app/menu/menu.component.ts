@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { products } from '../products';
 import { IProducts } from '../IProducts';
-
+import { CartService } from '../cart.service';
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
@@ -10,6 +10,20 @@ import { IProducts } from '../IProducts';
 export class MenuComponent implements OnInit {
   products: IProducts[] = products;
 
+
+
+  constructor(private cartService: CartService) {
+
+  }
+  addToCart(id: number) {
+    window.alert('Your product has been added to the cart!');
+    this.cartService.addToCart(this.products[id]);
+  }
+  ngOnInit(): void {
+  }
+
+
+}
   // products: Array<{ name: string, img: any, description: string, price: number, availability: boolean, }> = [
 
   //   {
@@ -79,9 +93,4 @@ export class MenuComponent implements OnInit {
   //   }
   // ]
 
-  constructor() { }
 
-  ngOnInit(): void {
-  }
-
-}
