@@ -46,10 +46,10 @@
 
 <!-- Order contact form -->
 <div class="container mt-5 contactContainer">
-    <h1 class="mb-3">Contact form</h1>
-    <p>To complete your order, please fill up the info form below.
+    <h1 class="mb-3 block1">Contact form</h1>
+    <p class="block2">To complete your order, please fill up the info form below.
     </p>
-    <div class="container">
+    <div class="container block3">
         <form class="d-flex flex-column col-lg-4" [formGroup]="contact" (ngSubmit)="submitForm()">
             <input type="text" placeholder="First Name" formControlName="fName">
             <br>
