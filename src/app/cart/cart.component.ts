@@ -23,11 +23,11 @@ export class CartComponent implements OnInit {
     }
     return total;
   }
-  get serviceFee(): number {
+  get serviceCharge(): number {
     return this.itemPrice * 0.1;
   }
   get discount(): number {
-    let total: number = this.itemPrice + this.serviceFee;
+    let total: number = this.itemPrice + this.serviceCharge;
     let discount: number = 0;
     if (total >= 40) {
       discount = total * 0.15;
@@ -35,7 +35,7 @@ export class CartComponent implements OnInit {
     return discount;
   }
   get totalPrice(): number {
-    return (this.itemPrice + this.serviceFee);
+    return (this.itemPrice + this.serviceCharge);
   }
   ngOnInit(): void {
     this.items = this.cartService.getItems();

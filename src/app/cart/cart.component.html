@@ -1,17 +1,17 @@
 <!-- Cart -->
 <div class="container">
     <div class="row mt-5">
-        <div class="col-lg-6 col-md-5 col-sm-11 m-1">
+        <div class="col-lg-6 col-md-5 col-sm-11 m-1 kuk">
             <h1>Cart</h1>
-            <hr class="hrshortone">
+            <hr>
             <h6>{{items.length}} item(s)</h6>
-            <hr class="hrshortone">
+            <hr>
             <div class="card mb-3" *ngFor="let item of items">
                 <ul class="mt-1 mb-1" style="list-style: none;">
                     <li>
                         <div class="row g-0">
                             <div class="col-md-5 col-sm-6">
-                                <img [src]="item.img" class="img-fluid rounded picscart" alt="menu">
+                                <img [src]="item.img" class="img-fluid rounded" alt="menu">
                             </div>
                             <div class="col-md-7 col-sm-6">
                                 <div class="card-body">
@@ -24,37 +24,38 @@
                 </ul>
             </div>
         </div>
-        <div class="col-lg-5 col-md-5 col-sm-11 m-1">
+        <div class="col-lg-6 col-md-5 col-sm-11 m-1 kuk">
             <h1>Receipt</h1>
-            <hr class="hrshort">
+            <hr>
             <span class="price">
                 <p>Items price: {{itemPrice | currency:'EUR':true }}</p>
             </span>
             <span class="price">
-                <p>Service fee: {{serviceFee | currency:'EUR':true }}</p>
+                <p>Service charge: {{serviceCharge | currency:'EUR':true }}</p>
             </span>
             <span class="price">
-                <p>Discount: {{discount | currency:'EUR':true }}</p>
+                <p>Discount (for purchases over 40€ ONLY) {{discount | currency:'EUR':true }}</p>
             </span>
-            <hr class="hrshort">
+            <hr>
             <span class="price">
-                <p class="text-bold">Total price (incl. VAT) {{totalPrice | currency:'EUR':true }}</p>
+                <p class="text-bold">Your Total price (incl. VAT) {{totalPrice | currency:'EUR':true }}</p>
             </span>
         </div>
-    </div>
-</div>
+        <!-- Contact form -->
+        <div class="col-lg-6 col-md-5 col-sm-11 m-1 kuk">
+            <h1 class="mb-3 block1">Contact form</h1>
+            <p class="block2">To complete your order, please fill up the info form below.
+            </p>
+            <div class="container block3">
+                <form class="d-flex flex-column col-lg-5" [formGroup]="contact" (ngSubmit)="submitForm()">
+                    <input type="text" placeholder="First Name" formControlName="fName">
+                    <br>
+                    <input type="text" placeholder="Familiy Name" formControlName="phone">
+                    <input type="submit" class="btn btn-primary border-0 mt-3 mb-5 col-lg-5 block4" value="Buy now">
+                </form>
+            </div>
+        </div>
 
-<!-- Order contact form -->
-<div class="container mt-5 contactContainer">
-    <h1 class="mb-3 block1">Contact form</h1>
-    <p class="block2">To complete your order, please fill up the info form below.
-    </p>
-    <div class="container block3">
-        <form class="d-flex flex-column col-lg-4" [formGroup]="contact" (ngSubmit)="submitForm()">
-            <input type="text" placeholder="First Name" formControlName="fName">
-            <br>
-            <input type="text" placeholder="Familiy Name" formControlName="phone">
-            <input type="submit" class="btn btn-primary border-0 mt-3 mb-5 col-lg-3" value="Buy now">
-        </form>
     </div>
+
 </div>
