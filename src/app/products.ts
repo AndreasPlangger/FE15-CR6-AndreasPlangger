@@ -54,13 +54,13 @@ export const products = [
         img: '../../assets/img/tartufo_limone_ripieno.jpg',
         description: 'Real lemon with its flesh removed and filled with a refreshing lemon sorbet',
         price: 7,
-        availability: false,
+        availability: true,
     },
     {
         name: 'Panna Cotta',
         img: '../../assets/img/panna_cotta.jpg',
         description: 'Traditional Italian dessert made with fresh strawberries, homemade cream and vanilla',
         price: 9,
-        availability: true,
+        availability: false,
     }
 ];
